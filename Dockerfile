@@ -15,6 +15,7 @@ RUN apt-get update
 FROM base as dependencies
 ARG JRE='openjdk-16-jre-headless'
 
+RUN echo apt-get search openjdk
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install $JRE
 
 FROM dependencies as fetch_tika
